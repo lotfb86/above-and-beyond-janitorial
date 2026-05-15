@@ -1,0 +1,9 @@
+# /robots.txt
+User-agent: *
+Allow: /
+
+# Block any future admin / API surfaces
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://aboveandbeyondjanitorialservice.com/sitemap.xml
