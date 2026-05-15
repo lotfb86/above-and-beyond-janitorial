@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ---- CONFIG ---- */
-/* Recipient: todd@aboveandbeyondjanitorialservice.com
+/* Recipient: abovejanitorial@hotmail.com
    Replace FORMSPREE_ID with the form ID from formspree.io.
    Form ID looks like "xqalbpoz" — endpoint becomes
    https://formspree.io/f/xqalbpoz. See SETUP.md. */
@@ -29,11 +29,39 @@ const FREQS = [
 
 let lastFocusBeforeModal = null;
 
+const FOCUSABLE_SEL = 'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+
+function getModalFocusables() {
+  const modal = document.getElementById('quote-modal-inner');
+  return modal ? [...modal.querySelectorAll(FOCUSABLE_SEL)].filter(el => el.offsetParent !== null) : [];
+}
+
+function modalKeydown(e) {
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    closeQuote();
+    return;
+  }
+  if (e.key !== 'Tab') return;
+  const focusables = getModalFocusables();
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+}
+
 function openQuote() {
   lastFocusBeforeModal = document.activeElement;
   STATE.step = 0;
   document.getElementById('quote-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', modalKeydown);
   render();
 }
 function openQuoteFromCard() {
@@ -50,11 +78,13 @@ function openQuoteFromCard() {
   STATE.step = 3;
   document.getElementById('quote-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', modalKeydown);
   render();
 }
 function closeQuote() {
   document.getElementById('quote-modal').classList.remove('open');
   document.body.style.overflow = '';
+  document.removeEventListener('keydown', modalKeydown);
   if (lastFocusBeforeModal && typeof lastFocusBeforeModal.focus === 'function') {
     lastFocusBeforeModal.focus();
   }
@@ -166,7 +196,7 @@ async function submitQuote() {
     console.error(e);
     btn.disabled = false;
     btn.innerHTML = orig;
-    err.textContent = "Sorry — couldn't send. Please call (208) 818-3175 or email todd@aboveandbeyondjanitorialservice.com.";
+    err.textContent = "Sorry — couldn't send. Please call (208) 818-3175 or email abovejanitorial@hotmail.com.";
   }
 }
 

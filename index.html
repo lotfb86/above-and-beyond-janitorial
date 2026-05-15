@@ -18,10 +18,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/gyByhwUxId8gMEwcGFWNOITd.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/or3nQ6H-1_WfwkMZI_qYFrcdmhHkjko.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/css/styles.css">
 
 <script type="application/ld+json">
@@ -34,7 +33,7 @@
   "logo":"https://aboveandbeyondjanitorialservice.com/assets/logo.png",
   "url":"https://aboveandbeyondjanitorialservice.com/",
   "telephone":"+1-208-818-3175",
-  "email":"todd@aboveandbeyondjanitorialservice.com",
+  "email":"abovejanitorial@hotmail.com",
   "priceRange":"$$",
   "address":{"@type":"PostalAddress","addressLocality":"Hayden","addressRegion":"ID","addressCountry":"US"},
   "geo":{"@type":"GeoCoordinates","latitude":47.766,"longitude":-116.786},
@@ -73,7 +72,7 @@
   "logo":"https://aboveandbeyondjanitorialservice.com/assets/logo.png",
   "founder":{"@type":"Person","name":"Todd D. Johnson"},
   "foundingDate":"1997",
-  "contactPoint":{"@type":"ContactPoint","telephone":"+1-208-818-3175","contactType":"customer service","email":"todd@aboveandbeyondjanitorialservice.com","areaServed":"US"}
+  "contactPoint":{"@type":"ContactPoint","telephone":"+1-208-818-3175","contactType":"customer service","email":"abovejanitorial@hotmail.com","areaServed":"US"}
 }
 </script>
 </head>
@@ -221,14 +220,14 @@
           <div class="svc-photo-sub">Truck-mount hot-water extraction. Quarterly programs.</div>
         </div>
       </article>
-      <article class="svc svc-photo" style="background-image: url('/assets/photos/hard-floor-care.jpg');" aria-label="Hard-floor care">
+      <article class="svc svc-photo bg-hard-floor-care" aria-label="Hard-floor care">
         <div class="svc-photo-overlay">
           <div class="svc-photo-num">Included</div>
           <div class="svc-photo-label">Hard-floor care</div>
           <div class="svc-photo-sub">Strip, wax, burnish. VCT, LVT, concrete, terrazzo, hardwood.</div>
         </div>
       </article>
-      <article class="svc svc-photo" style="background-image: url('/assets/photos/window-cleaning.jpg');" aria-label="Window cleaning">
+      <article class="svc svc-photo bg-window-cleaning" aria-label="Window cleaning">
         <div class="svc-photo-overlay">
           <div class="svc-photo-num">Included</div>
           <div class="svc-photo-label">Window cleaning</div>
@@ -242,7 +241,7 @@
           <div class="svc-photo-sub">Touch-point disinfection, fixture detailing, restocking.</div>
         </div>
       </article>
-      <article class="svc svc-photo" style="background-image: url('/assets/photos/van.jpg');" aria-label="On the road in North Idaho">
+      <article class="svc svc-photo bg-van" aria-label="On the road in North Idaho">
         <div class="svc-photo-overlay">
           <div class="svc-photo-num">On the road</div>
           <div class="svc-photo-label">North Idaho, every night.</div>
@@ -286,7 +285,7 @@
         <div class="content"><div class="num">05 &middot; Faith</div><h4>Churches</h4><p>Weekly resets. Sanctuary, classrooms, restrooms.</p></div>
       </div>
       <div class="ind-card">
-        <div class="bg" style="background-image: url('/assets/photos/government-municipal.jpg');"></div>
+        <div class="bg bg-government-municipal"></div>
         <div class="content"><div class="num">06 &middot; Public</div><h4>Government &amp; municipal</h4><p>Licensed, insured, after-hours.</p></div>
       </div>
     </div>
@@ -457,7 +456,7 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+12088183175">(208) 818-3175</a></li>
-          <li><a href="mailto:todd@aboveandbeyondjanitorialservice.com">todd@aboveandbeyondjanitorialservice.com</a></li>
+          <li><a href="mailto:abovejanitorial@hotmail.com">abovejanitorial@hotmail.com</a></li>
           <li>Hayden, Idaho</li>
           <li>Evenings &amp; weekends</li>
           <li style="margin-top:8px;"><a href="/privacy.html">Privacy</a></li>
@@ -474,7 +473,7 @@
 
 <!-- MODAL -->
 <div class="modal-scrim" id="quote-modal" onclick="if(event.target===this)closeQuote()">
-  <div class="modal" id="quote-modal-inner"></div>
+  <div class="modal" id="quote-modal-inner" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title"></div>
 </div>
 
 </main>

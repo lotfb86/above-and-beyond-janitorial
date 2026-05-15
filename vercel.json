@@ -3,6 +3,18 @@
   "outputDirectory": ".",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/services/medical-dental.html",
+      "destination": "/services/commercial-janitorial.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/medical-dental",
+      "destination": "/services/commercial-janitorial.html",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
